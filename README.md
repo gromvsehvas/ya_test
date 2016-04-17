@@ -1,0 +1,1 @@
+YA_test проект для academy.yandex.ru
