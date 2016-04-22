@@ -39,7 +39,7 @@ public class ActivityFirst extends AppCompatActivity {
 
                 HttpURLConnection urlConnection = null;
                 BufferedReader reader = null;
-                
+
                 URL url = new URL("http://download.cdn.yandex.net/mobilization-2016/artists.json");
 
                 urlConnection = (HttpURLConnection) url.openConnection();
