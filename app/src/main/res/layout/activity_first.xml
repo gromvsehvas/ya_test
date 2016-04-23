@@ -6,30 +6,34 @@
 
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="450dp">
+        android:layout_height="450dp"
+        android:id="@+id/flProgressBar">
 
         <ProgressBar
             android:layout_width="fill_parent"
             android:layout_height="400dp"
             android:indeterminateDrawable="@drawable/progressbar"
             android:indeterminate="false"
+            android:layout_margin="10dp"
             android:id="@+id/ProcessBar"
-            android:layout_margin="10dp" />
+            />
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        >
 
         <TextView
             android:layout_width="240dp"
             android:layout_height="70dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="result_text"
-            android:id="@+id/tView"
             android:layout_gravity="center"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:text="@string/TextProgress"
+            android:id="@+id/tvTextProgress"
+            />
     </FrameLayout>
 
 </LinearLayout>

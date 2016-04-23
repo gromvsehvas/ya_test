@@ -54,6 +54,8 @@ public class ActivityFillList extends AppCompatActivity {
 
                 // запускаем активити для просмотра информации о тайтле
                 startActivity(intent);
+                // Поменяем анимацию перехода между активити
+                overridePendingTransition(R.anim.anim_move_right, R.anim.anim_change_alpha);
             }
         });
     }
