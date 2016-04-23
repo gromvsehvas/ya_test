@@ -8,10 +8,10 @@ public class TitleArr {
     public String strId;
     public String strTitle;
     public String strGenres;
-    public int nAlbums;
-    public int nTracks;
+    public String strAlbums;
+    public String strTracks;
     public String strCoverSmall;
     public String strCoverBig;
     public String strDescription;
-    public String strLinkSinger;
+    public String strLinkTitle;
 }

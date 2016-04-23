@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">YA_test</string>
-    <string name="URLArtists.json">"http://download.cdn.yandex.net/mobilization-2016/artists.json"</string>
+    <string name="URLTitleList">"http://download.cdn.yandex.net/mobilization-2016/artists.json"</string>
     <string name="title">Исполнители</string>
     <string name="list_title">List_Title</string>
     <string name="AlbumsAndTracks">AlbumsAndTracks</string>
     <string name="AlbumsAndTracks_about">AlbumsAndTracks_about</string>
     <string name="Genres">Genres</string>
     <string name="Genres_about">Genres_about</string>
-    <string name="bio">Биография</string>
+    <string name="Description">Биография</string>
     <string name="CoverSmall">CoverSmall</string>
     <string name="CoverBig">CoverBig</string>
 </resources>

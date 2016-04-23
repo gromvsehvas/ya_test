@@ -17,6 +17,9 @@
         <activity android:name=".ActivityFillList">
             android:label="@string/list_title">
         </activity>
+        <activity android:name=".ActivitySecond"
+            android:label="@string/Description">
+        </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

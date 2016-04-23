@@ -21,7 +21,7 @@
                 android:clickable="false"
                 android:layout_margin="10dp"
                 android:contentDescription="@string/CoverSmall"
-                android:src="#af4747"
+                android:src="#947ad4"
                 android:id="@+id/ivCoverSmall"
                 />
 

@@ -8,6 +8,6 @@
         <item name="android:textColorPrimary">@color/textColorWhite</item>
     </style>
     <style name="ToolbarColorBack" parent="AppTheme">
-        <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/textColorWhite</item>
     </style>
 </resources>

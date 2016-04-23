@@ -13,14 +13,14 @@ import com.squareup.picasso.Picasso;
 /**
  * Created by gromvsehvas on 4/22/2016.
  */
-public class FillTable extends BaseAdapter {
+public class FillListView extends BaseAdapter {
 
     private final LayoutInflater mInflater;
     private TitleArr[] clTitleArr;
     private final Context mContext;
 
 
-    public FillTable(Context context, TitleArr[] mTArr ) {
+    public FillListView(Context context, TitleArr[] mTArr ) {
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         clTitleArr = mTArr;
         mContext = context;
@@ -56,11 +56,9 @@ public class FillTable extends BaseAdapter {
         final TextView tvGenres = (TextView) view.findViewById(R.id.tvGenres);
         tvGenres.setText(LineTitle.strGenres);
 
-        String strSong = String.format("%d %s, %d %s",
-                LineTitle.nAlbums,
-                FormattedStr(LineTitle.nAlbums, "альбом", "альбома", "альбомов"),
-                LineTitle.nTracks,
-                FormattedStr(LineTitle.nTracks, "песня", "песни", "песен"));
+        String strSong = String.format("%s, %s",
+                LineTitle.strAlbums,
+                LineTitle.strTracks);
 
         final TextView tvAlbumsAndTracks = (TextView) view.findViewById(R.id.tvAlbumsAndTracks);
         tvAlbumsAndTracks.setText(strSong);
@@ -73,39 +71,6 @@ public class FillTable extends BaseAdapter {
                 .into(ivCoverSmall);
 
         return view;
-    }
-
-    // "альбом", "альбома", "альбомов"
-    public String FormattedStr(int nCount, String text1, String text2, String text3) {
-        String strEnd = "";
-        int b = nCount % 100;
-        if (b > 10 && b < 20)
-            strEnd = text3;
-        else {
-            b = b % 10;
-            switch (b) {
-                case 1: {
-                    strEnd = text1;
-                    break;
-                }
-                case 2:
-                case 3:
-                case 4: {
-                    strEnd = text2;
-                    break;
-                }
-                case 0:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:{
-                    strEnd = text3;
-                    break;
-                }
-            }
-        }
-        return strEnd;
     }
 }
 

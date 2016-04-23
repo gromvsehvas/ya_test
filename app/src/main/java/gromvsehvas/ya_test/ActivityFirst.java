@@ -19,18 +19,18 @@ public class ActivityFirst extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
+        // Скачиваем список с тайтлами
         DownloadTitleFile AsyncTask = new DownloadTitleFile();
         AsyncTask.execute();
-
-
     }
+
     class DownloadTitleFile extends AsyncTask<Void, Void, String> {
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             TextView tView = (TextView) findViewById(R.id.tView);
-            tView.setText("Подождите,\nвыполняется загрузка");
+            tView.setText("Выполняется загрузка");
         }
 
         @Override
@@ -40,12 +40,14 @@ public class ActivityFirst extends AppCompatActivity {
                 HttpURLConnection urlConnection = null;
                 BufferedReader reader = null;
 
-                URL url = new URL("http://download.cdn.yandex.net/mobilization-2016/artists.json");
-
+                // Ссылка на файл с тайтлами
+                URL url = new URL(getResources().getString(R.string.URLTitleList));
+                // Конектимся и скачиваем
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
                 urlConnection.connect();
 
+                // парсим полученые данные
                 InputStream inputStream = urlConnection.getInputStream();
                 StringBuffer strBuffer = new StringBuffer();
                 reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -53,6 +55,7 @@ public class ActivityFirst extends AppCompatActivity {
                 while ((line = reader.readLine()) != null) {
                     strBuffer.append(line);
                 }
+                // Вернем строку со всеми тайтлами для заполнения таблицы
                 return strBuffer.toString();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -63,17 +66,15 @@ public class ActivityFirst extends AppCompatActivity {
         @Override
         protected void onPostExecute(String strJson) {
             super.onPostExecute(strJson);
-
             if(!strJson.isEmpty()){
                 Intent intent = new Intent(ActivityFirst.this, ActivityFillList.class);
-                //передадим данные в ActivityFillList для заполнения таблицы
+                // Передадим данные в ActivityFillList для заполнения таблицы
                 intent.putExtra("strJson", strJson);
-
-                //запускаем активити
+                // Запускаем активити в котором заполним список тайтлов
                 startActivity(intent);
+                // Закрываем текущий активити
                 ActivityFirst.this.finish();
             }
         }
     }
-
 }
